@@ -3,5 +3,5 @@ version: 2
 jobs:
   test:
     overide:
-        - mocha
+      - mocha
  
