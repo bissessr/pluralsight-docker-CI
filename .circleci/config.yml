@@ -1,4 +1,4 @@
-#latest
+# ~/.circleci/config.yml
 
 version: 2
 deployment:
@@ -10,3 +10,4 @@ test:
   overide:
     - mocha
     
+
