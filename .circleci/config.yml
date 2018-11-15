@@ -1,12 +1,18 @@
 # ~/.circleci/config.yml
 version: 2
-Circle_Test:
-  jobs:
-    deployment:
-      branch: master
-      commands:
-        - $DOCKER_HUB_TRIGGER
-    test:
-      override:
-        - mocha
-    
+jobs:
+  deployment:
+    branch: master
+    commands:
+      - $DOCKER_HUB_TRIGGER
+  test:
+    override:
+      - mocha
+
+workflows:
+  version: 2
+  Circle_Test:
+    jobs:
+      - test
+      - deployment
+      
