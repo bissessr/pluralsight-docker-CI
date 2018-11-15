@@ -1,11 +1,23 @@
-version: 2
-#jobs:
-build:
-  deployment:
-    dockerhub:
-    branch: master
-    commands:
-      - $DOCKER_HUB_TRIGGER
-test:
-  - run:
-    - mocha
+
+workflows:
+  version: 2
+  node-ios:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: dev
+      - ios:
+          type: approval
+          requires:
+            - build
+
+#build:
+#   deployment:
+#    dockerhub:
+#    branch: master
+#    commands:
+#      - $DOCKER_HUB_TRIGGER
+#test:
+#  - run:
+#    - mocha
