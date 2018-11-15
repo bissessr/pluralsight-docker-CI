@@ -1,17 +1,14 @@
 
-#workflows:
-version: 2
-node-ios:
-  jobs:
-    - build:
-        filters:
-          branches:
-            only: dev
-    - ios:
-        type: approval
-        requires:
-          - build
+version: 2.1
 
+orbs:
+    hello: circleci/hello-build@.0.0.5 # uses the circleci/buildpack-deps Docker image
+
+workflows:
+    "Hello Workflow":
+        jobs:
+          - hello/hello-build
+          
 #build:
 #   deployment:
 #    dockerhub:
