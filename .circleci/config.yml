@@ -1,14 +1,11 @@
 version: 2
-deployment:
-  dockerhub:
+#jobs:
+build:
+  deployment:
+    dockerhub:
     branch: master
     commands:
       - $DOCKER_HUB_TRIGGER
-  
-steps:
-- run:
-    name: run_tests
-    commands:
-      - mocha
-
-    
+test:
+  - run:
+    - mocha
