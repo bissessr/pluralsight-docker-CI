@@ -7,23 +7,14 @@ version: 2
 #      - checkout # check out the code in the project directory
 #      - run: echo "hello world" # run the `echo` command
 
-#deployment:
-#  dockerhub:
-#  branch: master
-#  commands:
-#    - $DOCKER_HUB_TRIGGER
-#tests:
-#  override:
-#  - mocha
+deployment:
+  dockerhub:
+  branch: master
+  commands:
+    - $DOCKER_HUB_TRIGGER
+tests:
+  override:
+    - mocha
 
 # curl -H "Content-Type:application/json" --data '{"build":true}' -X POST https://registry.hub.docker.com/u/bissessd/pluralsight-docker-ci/trigger/57b397b9-a44c-4dda-befe-0810ba258d5f/
 
-
-deploy:
-  machine:
-    enabled: true
-  steps:
-    - checkout
-    - run:
-        name: Trigger build in docker hub
-        command: $HUB_DOCKER_TRIGGER
