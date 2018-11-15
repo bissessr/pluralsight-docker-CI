@@ -1,6 +1,6 @@
 # ~/.circleci/config.yml
 version: 2
-Jobs:
+jobs:
   deployment:
     branch: master
     commands:
@@ -10,4 +10,5 @@ Jobs:
     override:
       - mocha
     
+
 
