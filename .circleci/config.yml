@@ -7,12 +7,10 @@ jobs:
       - checkout # check out the code in the project directory
       - run: echo "hello world" # run the `echo` command
 
-#build:
-#   deployment:
-#    dockerhub:
-#    branch: master
-#    commands:
-#      - $DOCKER_HUB_TRIGGER
-#test:
-#  - run:
-#    - mocha
+deployment:
+  dockerhub:
+    branch: master
+    commands:
+      - $DOCKER_HUB_TRIGGER
+  steps:
+  - run: mocha
