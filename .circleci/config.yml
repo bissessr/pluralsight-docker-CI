@@ -15,6 +15,7 @@ deployment:
 tests:
   steps:
   - run:
+    name: Moca_Tests
     command: mocha
 
   # curl -H "Content-Type:application/json" --data '{"build":true}' -X POST https://registry.hub.docker.com/u/bissessd/pluralsight-docker-ci/trigger/57b397b9-a44c-4dda-befe-0810ba258d5f/
