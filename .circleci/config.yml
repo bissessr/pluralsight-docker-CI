@@ -9,11 +9,12 @@ jobs:
     steps:
       - checkout
       #- run: npm install
-      - run: npm test
+      #- run: npm test
+      - run: mocha
 
-    deployment:
-      dockerhub:
-      branch: master
-      commands:
-        - $DOCKER_HUB_TRIGGER
+   # deployment:
+   #   dockerhub:
+   #   branch: master
+   #   commands:
+   #     - $DOCKER_HUB_TRIGGER
   
